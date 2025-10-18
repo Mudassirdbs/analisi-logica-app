@@ -1,0 +1,6 @@
+.pythonlibs
+__pycache__
+*.pyc
+.replit
+replit.nix
+.gitignore
