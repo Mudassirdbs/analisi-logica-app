@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisi Logica Online</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Analisi Logica Online</h1>
+        </header>
+
+        <div class="input-section">
+            <div class="input-group">
+                <textarea 
+                    id="sentenceInput" 
+                    placeholder="Inserisci una frase italiana da analizzare..."
+                    rows="3"
+                ></textarea>
+                <div class="button-group">
+                    <button id="micButton" class="mic-button" aria-label="Registra con microfono">
+                        🎤 Parla
+                    </button>
+                    <button id="analyzeButton" class="analyze-button">
+                        ✨ Analizza
+                    </button>
+                </div>
+            </div>
+
+            <div class="examples">
+                <p><strong>Esempi da provare:</strong></p>
+                <div class="example-buttons">
+                    <button class="example-btn" data-example="Il gatto mangia il pesce sul tavolo.">Il gatto mangia il pesce sul tavolo.</button>
+                    <button class="example-btn" data-example="Maria legge un libro interessante in biblioteca.">Maria legge un libro interessante in biblioteca.</button>
+                    <button class="example-btn" data-example="Ho dato il regalo a mio fratello ieri.">Ho dato il regalo a mio fratello ieri.</button>
+                    <button class="example-btn" data-example="marcella ha dato loro istruzioni molto precise e degli utili consigli">Marcella ha dato loro istruzioni...</button>
+                    <button class="example-btn" data-example="I bambini giocano felicemente nel parco.">I bambini giocano felicemente nel parco.</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultsSection" class="results-section" style="display: none;">
+            <h2>📊 Risultati dell'Analisi</h2>
+            
+            <div class="result-card">
+                <h3>🎯 Soggetto</h3>
+                <div id="subjectResults" class="result-content"></div>
+            </div>
+
+            <div class="result-card">
+                <h3>⚡ Predicato</h3>
+                <div id="predicateResults" class="result-content"></div>
+            </div>
+
+            <div class="result-card">
+                <h3>🔗 Complementi</h3>
+                <div id="complementsResults" class="result-content"></div>
+            </div>
+
+            <div class="result-card">
+                <h3>✏️ Altri Elementi</h3>
+                <div id="otherElementsResults" class="result-content"></div>
+            </div>
+
+            <div class="result-card">
+                <h3>📋 Analisi Completa</h3>
+                <div id="fullAnalysis" class="full-analysis"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
